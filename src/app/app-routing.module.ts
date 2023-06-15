@@ -4,6 +4,8 @@ import { IndexComponent } from './home/index/index.component';
 import { HouseComponent } from './about/house/house.component';
 import { ParentAlbumComponent } from './galary/parent-album/parent-album.component';
 import { BlogerComponent } from './blog/bloger/bloger.component';
+import { SigupComponent } from './authentication/sigup/sigup.component';
+import { SiginComponent } from './authentication/sigin/sigin.component';
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
@@ -11,6 +13,8 @@ const routes: Routes = [
   { path: 'galary', component: ParentAlbumComponent },
   { path: 'blog', component: BlogerComponent },
   { path: 'search' ,  loadChildren: () => import('./pages-all/pages-all.module').then(m => m.PagesAllModule) },
+  { path: 'sigup',component:SigupComponent},
+  { path: 'sigin',component:SiginComponent}
 ];
 
 @NgModule({
