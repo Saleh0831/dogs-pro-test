@@ -1,0 +1,38 @@
+
+    <div class="container">
+      <form (submit)="onSubmit()" [formGroup]="form">
+        <fieldset class="text-center mt-5">
+          <legend>لطفا برای سرچ رد ویکی پدیا وارد کنیذ</legend>
+        </fieldset>
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <input formControlName="search" class="form-control" id="search" type="text" placeholder="What are you looking for?" />
+          </div>
+          <div  class="input-field third-wrap text-center mt-5">
+            <button class="btn btn-primary" type="submit">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+
+  <table class="table table-striped" *ngIf="searchWiki">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">title</th>
+            <th scope="col">wordcound</th>
+            <th scope="col">snippet</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of searchWiki;let i=index">
+            <td scope="row">{{i}}</td>
+            <td scope="row">{{item.title}}</td>
+            <td scope="row">{{item.wordcount}}</td>
+            <td [innerHTML]="item.snippet" scope="row"></td>
+
+        </tr>
+    </tbody>
+  </table>
